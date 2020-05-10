@@ -48,6 +48,10 @@ public class BusService {
 
 	public void saveBus(BusVO busVo) {
 		Bus bus = new Bus();
+		bus = findBusById(busVo);
+		if (bus == null) {
+			bus = new Bus();
+		}
 		bus.setBusOperationName(busVo.getBusOperationName());
 		bus.setFromBusTerminal(busVo.getFromBusTerminal());
 		bus.setToBusTerminal(busVo.getToBusTerminal());

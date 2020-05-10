@@ -30,6 +30,9 @@ public class DemoJsfApplication {
         return servletContext -> {
             servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
             servletContext.setInitParameter("primefaces.THEME", "nova-light");
+            servletContext.setInitParameter("javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE",
+            		Boolean.TRUE.toString());
+            servletContext.setInitParameter("javax.faces.FACELETS_REFRESH_PERIOD", "-1");
         };
     }
 

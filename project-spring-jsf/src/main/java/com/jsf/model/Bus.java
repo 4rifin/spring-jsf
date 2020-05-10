@@ -1,12 +1,15 @@
 package com.jsf.model;
 
-import lombok.Data;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import lombok.Data;
 
 @Entity
 @Data
@@ -19,9 +22,12 @@ public class Bus {
 	private String busOperationName;
 	private String fromBusTerminal;
 	private String toBusTerminal;
-
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date scheduledDateTime;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date estimatedDateTime;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date actualDateTime;
 
     

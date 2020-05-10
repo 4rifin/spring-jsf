@@ -46,9 +46,9 @@ public class BusController implements Serializable {
 
 	public void save() {
 		String message = "";
+		busService.saveBus(busVo);
+		fetchAll();
 		if (busService.validation()) {
-			busService.saveBus(busVo);
-			fetchAll();
 			message = "Succes Save";
 		} else {
 			fetchAll();
